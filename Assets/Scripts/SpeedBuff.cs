@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class SpeedBuff : MonoBehaviour
 {
-    public float Speed, BoundY, MaxAmount, MinAmount = 0;
-    public bool isEaten = false;
+    public float Speed, BoundY;
     void Update()
     {
-        SpeedUp();
         Move();
     }
 
@@ -16,7 +14,6 @@ public class SpeedBuff : MonoBehaviour
 	{
 		if(target.gameObject.tag == "Player")
 		{
-            isEaten = true;
             gameObject.SetActive(false);
 		}
 	}
@@ -32,18 +29,4 @@ public class SpeedBuff : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-    void SpeedUp()
-	{
-        if(isEaten)
-		{
-            Time.timeScale = 2f;
-            MinAmount += Time.deltaTime;
-            if(MinAmount > MaxAmount)
-			{
-                Time.timeScale = 1f;
-                isEaten = false;
-			}
-		}
-	}
 }

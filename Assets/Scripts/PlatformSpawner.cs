@@ -159,10 +159,16 @@ public class PlatformSpawner : MonoBehaviour
 			{
                 newPlatform.transform.parent = transform; // добавляет все созданные платформы в иерархию к спавнеру
             }
+
             if(newStar)
 			{
                 newStar.transform.parent = transform;
-			}                
+			}
+
+            if (newBuff)
+            {
+                newBuff.transform.parent = transform;
+            }
 
             currentPlatformSpawnTimer = 0f;
         }

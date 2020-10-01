@@ -653,7 +653,7 @@ MonoBehaviour:
   - {fileID: 9172789451364439447, guid: 082f45350e202804b9457120e35237c6, type: 3}
   PlatformSpawnTimer: 1
   ChanceToSpawnStar: 15
-  ChanceToSpawnBuff: 100
+  ChanceToSpawnBuff: 10
   Min_X: -2
   Max_X: 2
 --- !u!4 &259929074
@@ -1469,6 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46278ac4023e8646ad36999c96b8eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpeedTime: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4059,6 +4060,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2118436703211104127, guid: 7c413924b59b28c419ae0fff2f67d6f8, type: 3}
+      propertyPath: SpeedTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2524383962389520741, guid: 7c413924b59b28c419ae0fff2f67d6f8, type: 3}
       propertyPath: MoveSpeed
       value: 2

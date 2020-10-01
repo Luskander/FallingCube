@@ -69,7 +69,6 @@ public class PlatformScript : MonoBehaviour
             if(!SoundManager.instance.AudioStatus() && isCanPlaySound == true)
 			{
                 StartCoroutine(PlayLandingSound());
-                
 			}
 
             if (IsBreakable)

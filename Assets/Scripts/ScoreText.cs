@@ -61,5 +61,17 @@ public class ScoreText : MonoBehaviour
             starsValue++;
             PlayerPrefs.SetInt("StarsCount", starsValue);
 		}
+
+        if (collision.gameObject.tag == "SpeedBuff")
+        {
+            StartCoroutine(SpeedUp());
+        }
+    }
+
+    IEnumerator SpeedUp()
+	{
+        Time.timeScale = 2f;
+        yield return new WaitForSeconds(3f);
+        Time.timeScale = 1f;
 	}
 }

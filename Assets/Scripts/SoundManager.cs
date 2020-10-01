@@ -20,6 +20,11 @@ public class SoundManager : MonoBehaviour
 		}
 	}
 
+	void Start()
+	{
+		backgroundMusic.pitch = 1f;
+	}
+
 	void Update()
 	{
 		if(PauseMenu.isPaused)
@@ -59,5 +64,15 @@ public class SoundManager : MonoBehaviour
 	public bool AudioStatus()
 	{
 		return landSound.isPlaying;
+	}
+
+	public void SpeedingUp()
+	{
+		backgroundMusic.pitch = 1.06f;
+	}
+
+	public void SlowDown()
+	{
+		backgroundMusic.pitch = 1f;
 	}
 }
