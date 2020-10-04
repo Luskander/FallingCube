@@ -8,6 +8,8 @@ TagManager:
   - Top Spike
   - Star
   - SpeedBuff
+  - ImmuneBuff
+  - DoubleBuff
   layers:
   - Default
   - TransparentFX

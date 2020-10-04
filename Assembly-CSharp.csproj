@@ -55,23 +55,29 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\BackgroundScroll.cs" />
-    <Compile Include="Assets\Scripts\PlayerBounds.cs" />
-    <Compile Include="Assets\Scripts\ScoreText.cs" />
-    <Compile Include="Assets\Scripts\SoundManager.cs" />
-    <Compile Include="Assets\Scripts\StarScript.cs" />
-    <Compile Include="Assets\Scripts\PlatformScript.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\EnemyMove.cs" />
-    <Compile Include="Assets\Scripts\PlatformSpawner.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\EnemyShooter.cs" />
-    <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\SpeedBuff.cs" />
-    <Compile Include="Assets\Scripts\BuffInfluence.cs" />
+    <Compile Include="Assets\Scripts\Interface\Menus\ShopMenu.cs" />
+    <Compile Include="Assets\Scripts\Items\SpeedBuff.cs" />
+    <Compile Include="Assets\Scripts\Items\DoubleBuff.cs" />
+    <Compile Include="Assets\Scripts\Interface\Menus\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Interface\BackgroundScroll.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerBounds.cs" />
+    <Compile Include="Assets\Scripts\Interface\ScoreText.cs" />
+    <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Items\StarScript.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyShooter.cs" />
+    <Compile Include="Assets\Scripts\Items\ImmuneBuff.cs" />
+    <Compile Include="Assets\Scripts\Platform\PlatformScript.cs" />
+    <Compile Include="Assets\Scripts\Interface\Menus\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Interface\Menus\ShopItem.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
+    <Compile Include="Assets\Scripts\Platform\PlatformSpawner.cs" />
+    <Compile Include="Assets\Scripts\Player\BuffInfluence.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Interface\Menus\LockerMenu.cs" />
+    <Compile Include="Assets\Scripts\Interface\Menus\LockerItem.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
