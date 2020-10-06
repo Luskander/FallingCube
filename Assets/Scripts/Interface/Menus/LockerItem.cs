@@ -6,4 +6,5 @@ using UnityEngine;
 public class LockerItem : ScriptableObject
 {
 	public Sprite sprite;
+	public string Name;
 }

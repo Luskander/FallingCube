@@ -8,6 +8,7 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] private GameObject SpikePlatform;
     [SerializeField] private GameObject[] MovingPlatform;
     [SerializeField] private GameObject BreakablePlatform;
+    [SerializeField] private GameObject JumpPrefab;
     [SerializeField] private GameObject Star;
     [SerializeField] private GameObject[] Buff;
 
@@ -151,11 +152,37 @@ public class PlatformSpawner : MonoBehaviour
                 {
                     newPlatform = Instantiate(BreakablePlatform, temp, Quaternion.identity);
                 }
+            }
+
+            else if (platformSpawnCount == 5)
+            {
+                if (Random.Range(0, 2) > 0)
+                {
+                    newPlatform = Instantiate(PlatformPrefab, temp, Quaternion.identity);
+
+                    if (Random.Range(0, 100) < ChanceToSpawnStar)
+                    {
+                        newStar = Instantiate(Star, new Vector2(temp.x, temp.y + 0.5f), Quaternion.identity);
+                    }
+
+                    else
+                    {
+                        if (Random.Range(0, 100) < ChanceToSpawnBuff)
+                        {
+                            newBuff = Instantiate(Buff[Random.Range(0, Buff.Length)], new Vector2(temp.x, temp.y + 0.5f), Quaternion.identity);
+                        }
+                    }
+                }
+
+                else
+                {
+                    newPlatform = Instantiate(JumpPrefab, temp, Quaternion.identity);
+                }
 
                 platformSpawnCount = 0;
             }
 
-            if(newPlatform)
+            if (newPlatform)
 			{
                 newPlatform.transform.parent = transform; // добавляет все созданные платформы в иерархию к спавнеру
             }

@@ -8,7 +8,7 @@ public class LockerMenu : MonoBehaviour
 	[SerializeField] private LockerItem[] lockerItem;
 
 	[SerializeField] private Transform lockerContainer;
-	[SerializeField] private GameObject shopItemPrefab;
+	[SerializeField] private GameObject lockerItemPrefab;
 	[SerializeField] private GameObject playerPrefab;
 	[SerializeField] private Image playerPreview;
 
@@ -17,17 +17,42 @@ public class LockerMenu : MonoBehaviour
 		PopulateLocker();
 	}
 
+	private void Update()
+	{
+		UpdateLocker();
+	}
+
 	private void PopulateLocker()
 	{
 		for(int i = 0; i < lockerItem.Length; i++)
 		{
 			LockerItem item = lockerItem[i];
-
-			if(PlayerPrefs.GetInt($"{item}") == 1)
+			if (PlayerPrefs.GetInt($"{item.Name}") == 1)
 			{
-				GameObject itemObject = Instantiate(shopItemPrefab, lockerContainer);
-				itemObject.transform.GetChild(1).GetComponent<Image>().sprite = item.sprite;
+				GameObject itemObject = Instantiate(lockerItemPrefab, lockerContainer);
+				itemObject.GetComponent<Image>().sprite = item.sprite;
 				itemObject.transform.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(item));
+				itemObject.name = item.Name;
+			}
+
+			if(item.Name == PlayerPrefs.GetString("PlayerPreview"))
+			{
+				playerPreview.sprite = item.sprite;
+			}
+		}
+	}
+
+	private void UpdateLocker()
+	{
+		for(int i = 0; i < lockerItem.Length; i++)
+		{
+			LockerItem item = lockerItem[i];
+			if (!GameObject.Find($"{item.Name}") && PlayerPrefs.GetInt($"{item.Name}") == 1)
+			{
+				GameObject itemObject = Instantiate(lockerItemPrefab, lockerContainer);
+				itemObject.GetComponent<Image>().sprite = item.sprite;
+				itemObject.transform.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(item));
+				itemObject.name = item.Name;
 			}
 		}
 	}
@@ -35,7 +60,9 @@ public class LockerMenu : MonoBehaviour
 	
 	private void OnButtonClick(LockerItem item)
 	{
+		PlayerPrefs.SetString("PlayerPreview", item.Name);
 		playerPreview.sprite = item.sprite;
+
 		playerPrefab.GetComponent<SpriteRenderer>().sprite = item.sprite;
 		DontDestroyOnLoad(playerPrefab);
 	}

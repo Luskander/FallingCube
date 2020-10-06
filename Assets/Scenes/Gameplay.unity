@@ -646,14 +646,15 @@ MonoBehaviour:
   - {fileID: 5691553024795662419, guid: 4bdd14184b86f3a41840d033bdd89472, type: 3}
   - {fileID: 2065202118383621990, guid: ff6c5efdfa00a18429224a6bd30ef219, type: 3}
   BreakablePlatform: {fileID: 8141428584841810317, guid: a8b2065344810154491bd8644ba1a11f, type: 3}
+  JumpPrefab: {fileID: 8866837048762533675, guid: b64f793785c8fb54189d5e183cf61415, type: 3}
   Star: {fileID: 5920399543463129215, guid: c96c931b632b75549a632875363aa56c, type: 3}
   Buff:
   - {fileID: 7071135718707218158, guid: 41ebee88a4dcbef4bb75eb849fb1f3da, type: 3}
-  - {fileID: 9172789451364439447, guid: 082f45350e202804b9457120e35237c6, type: 3}
   - {fileID: 1655573153246093350, guid: 0fef5873daff45348acf41282a9d9246, type: 3}
+  - {fileID: 9172789451364439447, guid: 082f45350e202804b9457120e35237c6, type: 3}
   PlatformSpawnTimer: 1
   ChanceToSpawnStar: 15
-  ChanceToSpawnBuff: 10
+  ChanceToSpawnBuff: 12
   Min_X: -2
   Max_X: 2
 --- !u!4 &259929074

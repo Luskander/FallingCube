@@ -20,6 +20,9 @@ public class ShopMenu : MonoBehaviour
 
 	private void Start()
 	{
+		PlayerPrefs.SetInt("Default", 1);
+		PlayerPrefs.SetInt("Green", 0);
+		PlayerPrefs.SetInt("Violet", 0);
 		PopulateShop();
 	}
 

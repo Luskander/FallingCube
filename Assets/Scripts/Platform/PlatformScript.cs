@@ -6,8 +6,9 @@ public class PlatformScript : MonoBehaviour
 {
     public float MoveSpeed = 2f;
     public float Bound_Y = 6f;
+    public float ForcePower;
 
-    public bool MovingPlatformLeft, MovingPlatformRight, IsBreakable, IsSpike, IsPlatform;
+    public bool MovingPlatformLeft, MovingPlatformRight, IsBreakable, IsSpike, IsPlatform, IsJump;
     
     private bool isCanPlaySound;
 
@@ -76,9 +77,14 @@ public class PlatformScript : MonoBehaviour
                 StartCoroutine(PlayLandingSound());
 			}
 
-            if (IsBreakable)
+            if(IsBreakable)
 			{
                 anim.Play("Break");
+			}
+
+            if(IsJump)
+			{
+                target.rigidbody.AddForce(Vector2.up * ForcePower);
 			}
         }
 	}

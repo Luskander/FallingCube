@@ -32,7 +32,6 @@ public class BuffInfluence : MonoBehaviour
 
 	void Start()
 	{
-		spriteRenderer.sprite = defaultSprite;
 		Time.timeScale = 1f;
 	}
 
