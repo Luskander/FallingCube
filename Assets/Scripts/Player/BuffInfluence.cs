@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class BuffInfluence : MonoBehaviour
 {
-	public static BuffInfluence instance;
-
 	[SerializeField] private SpriteRenderer spriteRenderer;
-	[SerializeField] private Sprite defaultSprite;
 	[SerializeField] private Sprite immuneSprite;
+	[SerializeField] private GameObject playerPrefab;
 
 	public float SpeedTotalTime = 5f;
 	public float ImmuneTotalTime = 5f;
@@ -32,6 +30,8 @@ public class BuffInfluence : MonoBehaviour
 
 	void Start()
 	{
+		isImmune = false;
+		spriteRenderer.sprite = playerPrefab.GetComponent<SpriteRenderer>().sprite;
 		Time.timeScale = 1f;
 	}
 
@@ -109,7 +109,7 @@ public class BuffInfluence : MonoBehaviour
 
 			else
 			{
-				spriteRenderer.sprite = defaultSprite;
+				spriteRenderer.sprite = playerPrefab.GetComponent<SpriteRenderer>().sprite;
 				timeCounter = 0f;
 				isImmune = false;
 			}

@@ -11,9 +11,14 @@ public class ScoreText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Stars;
     [SerializeField] private TextMeshProUGUI HighScore;
 
+    [SerializeField] private TextMeshProUGUI starsCollected;
+    [SerializeField] private TextMeshProUGUI deathScore;
+
+
     private float scoreValue;
     private float highScoreValue;
     private int starsValue;
+    private int starsCollectedOnGame;
 
 	void Awake()
 	{
@@ -26,7 +31,7 @@ public class ScoreText : MonoBehaviour
         if(PlayerPrefs.HasKey("StarsCount"))
 		{
             starsValue = PlayerPrefs.GetInt("StarsCount");
-            Stars.text = ": " + starsValue;
+            Stars.text = "" + starsValue;
 		}
     }
 
@@ -40,7 +45,8 @@ public class ScoreText : MonoBehaviour
         scoreValue += Time.deltaTime;
         HighestScore();
         Score.text = "Score: " + Mathf.FloorToInt(scoreValue);
-        Stars.text = ": " + starsValue;
+        deathScore.text = Score.text;
+        Stars.text = "" + starsValue;
     }
 
     void HighestScore()
@@ -61,8 +67,12 @@ public class ScoreText : MonoBehaviour
             if(BuffInfluence.isDoubled)
 			{
                 starsValue++;
+                starsCollectedOnGame++;
 			}
             starsValue++;
+            starsCollectedOnGame++;
+
+            starsCollected.text = "Collected stars: " + starsCollectedOnGame;
             PlayerPrefs.SetInt("StarsCount", starsValue);
 		}
 

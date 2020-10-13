@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class LockerMenu : MonoBehaviour
 	[SerializeField] private GameObject lockerItemPrefab;
 	[SerializeField] private GameObject playerPrefab;
 	[SerializeField] private Image playerPreview;
+	[SerializeField] private TextMeshProUGUI abilityText;
 
 	private void Start()
 	{
@@ -38,6 +40,7 @@ public class LockerMenu : MonoBehaviour
 			if(item.Name == PlayerPrefs.GetString("PlayerPreview"))
 			{
 				playerPreview.sprite = item.sprite;
+				SetAbilityText(item);
 			}
 		}
 	}
@@ -61,9 +64,33 @@ public class LockerMenu : MonoBehaviour
 	private void OnButtonClick(LockerItem item)
 	{
 		PlayerPrefs.SetString("PlayerPreview", item.Name);
-		playerPreview.sprite = item.sprite;
+		SetAbilityText(item);
 
+		playerPreview.sprite = item.sprite;
 		playerPrefab.GetComponent<SpriteRenderer>().sprite = item.sprite;
+
 		DontDestroyOnLoad(playerPrefab);
+	}
+
+	private void SetAbilityText(LockerItem item)
+	{
+		switch (item.Name)
+		{
+			case "Default":
+				{
+					abilityText.text = "None";
+					break;
+				}
+			case "Green":
+				{
+					abilityText.text = "Additional life";
+					break;
+				}
+			case "Violet":
+				{
+					abilityText.text = "Immune to spiked platforms";
+					break;
+				}
+		}
 	}
 }

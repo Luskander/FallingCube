@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8773085108757242380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8773085108757242382}
+  - component: {fileID: 8773085108757242381}
+  m_Layer: 0
+  m_Name: Platform Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8773085108757242382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773085108757242380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8773085108757242381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773085108757242380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2667600c42a9dd74db81df278fa202ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlatformPrefab: {fileID: 5241378882846853285, guid: e17177ff35f493b4fa3ebaad8c24eaf0, type: 3}
+  SpikePlatform: {fileID: 208253086813220326, guid: bfb73b4c7c199394280ff0f428e41e16, type: 3}
+  MovingPlatform:
+  - {fileID: 5691553024795662419, guid: 4bdd14184b86f3a41840d033bdd89472, type: 3}
+  - {fileID: 2065202118383621990, guid: ff6c5efdfa00a18429224a6bd30ef219, type: 3}
+  BreakablePlatform: {fileID: 8141428584841810317, guid: a8b2065344810154491bd8644ba1a11f, type: 3}
+  JumpPrefab: {fileID: 8866837048762533675, guid: b64f793785c8fb54189d5e183cf61415, type: 3}
+  Star: {fileID: 5920399543463129215, guid: c96c931b632b75549a632875363aa56c, type: 3}
+  Buff:
+  - {fileID: 7071135718707218158, guid: 41ebee88a4dcbef4bb75eb849fb1f3da, type: 3}
+  - {fileID: 1655573153246093350, guid: 0fef5873daff45348acf41282a9d9246, type: 3}
+  - {fileID: 9172789451364439447, guid: 082f45350e202804b9457120e35237c6, type: 3}
+  PlatformSpawnTimer: 1
+  ChanceToSpawnStar: 15
+  ChanceToSpawnBuff: 12
+  Min_X: -2
+  Max_X: 2

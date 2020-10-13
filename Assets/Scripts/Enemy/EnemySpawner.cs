@@ -12,9 +12,15 @@ public class EnemySpawner : MonoBehaviour
 
     private float enemySpawnedCount;
 
-    public int ChanceToSpawn = 10;
+    public float ChanceToSpawn;
+    private float lvlModifier;
 
     public float Min_X = -2.4f, Max_X = 2.4f;
+
+    void Start()
+    {
+        SetLvlModifier();
+    }
 
 	void Update()
     {
@@ -73,6 +79,19 @@ public class EnemySpawner : MonoBehaviour
             }
 
             currentSpawnTimer = 0f;
+        }
+    }
+
+    void SetLvlModifier()
+	{
+        if (PlayerPrefs.GetInt("PlayerLVL") > 40)
+        {
+            ChanceToSpawn = 70;
+        }
+        else
+        {
+            lvlModifier = PlayerPrefs.GetInt("PlayerLVL") / 2;
+            ChanceToSpawn += lvlModifier;
         }
     }
 }

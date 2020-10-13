@@ -66,18 +66,21 @@
     <Compile Include="Assets\Scripts\Items\StarScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\Projectile.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyShooter.cs" />
+    <Compile Include="Assets\Scripts\Interface\LevelProgressBar.cs" />
     <Compile Include="Assets\Scripts\Items\ImmuneBuff.cs" />
+    <Compile Include="Assets\Scripts\Items\LockerItem.cs" />
     <Compile Include="Assets\Scripts\Platform\PlatformScript.cs" />
+    <Compile Include="Assets\Scripts\Player\HealthScript.cs" />
     <Compile Include="Assets\Scripts\Interface\Menus\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Interface\Menus\ShopItem.cs" />
+    <Compile Include="Assets\Scripts\Items\ShopItem.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\Platform\PlatformSpawner.cs" />
     <Compile Include="Assets\Scripts\Player\BuffInfluence.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\Interface\Menus\LockerMenu.cs" />
-    <Compile Include="Assets\Scripts\Interface\Menus\LockerItem.cs" />
+    <Compile Include="Assets\Scripts\Interface\Menus\DeathMenu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

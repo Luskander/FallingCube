@@ -17,12 +17,15 @@ public class PlatformSpawner : MonoBehaviour
 
     private int platformSpawnCount;
 
-    public int ChanceToSpawnStar = 10;
-    public int ChanceToSpawnBuff = 10;
+    public float ChanceToSpawnStar = 12;
+    public float ChanceToSpawnBuff = 8;
+
+    private float lvlModifier;
 
     public float Min_X = -2f, Max_X = 2f;
     void Start()
     {
+        SetSpawnChance();
         currentPlatformSpawnTimer = PlatformSpawnTimer;
     }
 
@@ -200,4 +203,19 @@ public class PlatformSpawner : MonoBehaviour
             currentPlatformSpawnTimer = 0f;
         }
     } // создание платформ
+
+    void SetSpawnChance()
+	{
+        if(PlayerPrefs.GetInt("PlayerLVL") > 32)
+		{
+            ChanceToSpawnBuff = 15;
+            ChanceToSpawnStar = 20;
+		}
+        else
+		{
+            lvlModifier = PlayerPrefs.GetInt("PlayerLVL") / 4;
+            ChanceToSpawnBuff += lvlModifier;
+            ChanceToSpawnStar += lvlModifier;
+        }
+    }
 }

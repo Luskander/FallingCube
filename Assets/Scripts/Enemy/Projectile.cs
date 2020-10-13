@@ -30,11 +30,18 @@ public class Projectile : MonoBehaviour
 		if(target.CompareTag("Player"))
 		{
             DestroyProjectile();
-            if(!BuffInfluence.isImmune)
-			{
-                target.transform.position = new Vector2(1000f, 1000f);
+            if (!BuffInfluence.isImmune)
+            {
+                PlayerScript.CurrentHealth--;
                 SoundManager.instance.DeathSound();
-                GameManager.instance.RestartGame();
+
+                if (PlayerScript.CurrentHealth == 0)
+                {
+                    target.transform.position = new Vector2(1000f, 1000f);
+                    SoundManager.instance.DeathSound();
+                    PlayerScript.isDead = true;
+                    //GameManager.instance.RestartGame();
+                }
             }
 		}
 	}

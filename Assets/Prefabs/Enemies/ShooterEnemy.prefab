@@ -162,5 +162,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab645fe54b5d17d478ac7456b1f446ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartTimeShots: 2
+  StartTimeShots: 2.5
   projectile: {fileID: 6356730049288982235, guid: a0a54f8bbcbe5d5488c3d3a182fac13d, type: 3}

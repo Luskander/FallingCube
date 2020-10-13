@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 250653025318158020}
   - component: {fileID: 2524383962389520741}
   - component: {fileID: 643963016}
-  - component: {fileID: 4722517132580968316}
   - component: {fileID: 2118436703211104127}
+  - component: {fileID: -7838978448344372355}
+  - component: {fileID: -3041312753510434271}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c5c1a28eb1f00b74e9fa9053cbc934ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc3b629a9f2f6e1488691c95abe79368, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,6 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bfcedd3c6f03e408dce683fe2a1f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 0
+  healthBar: {fileID: 0}
+  playerGreen: {fileID: 0}
+  playerViolet: {fileID: 0}
   MoveSpeed: 2
 --- !u!114 &643963016
 MonoBehaviour:
@@ -163,7 +168,45 @@ MonoBehaviour:
   Min_X: -2.6
   Max_X: 2.6
   Min_Y: -5.6
---- !u!114 &4722517132580968316
+--- !u!114 &2118436703211104127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6521963775913957969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46278ac4023e8646ad36999c96b8eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  immuneSprite: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  SpeedTotalTime: 5
+  ImmuneTotalTime: 5
+  DoubleTotalTime: 5
+--- !u!114 &-7838978448344372355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6521963775913957969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85841e78fc3e1124a8172baebc02c31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+  MaxHealth: 0
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
+--- !u!114 &-3041312753510434271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,21 +221,5 @@ MonoBehaviour:
   Score: {fileID: 0}
   Stars: {fileID: 0}
   HighScore: {fileID: 0}
---- !u!114 &2118436703211104127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6521963775913957969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d46278ac4023e8646ad36999c96b8eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  defaultSprite: {fileID: 0}
-  immuneSprite: {fileID: 0}
-  SpeedTotalTime: 5
-  ImmuneTotalTime: 5
-  DoubleTotalTime: 5
+  starsCollected: {fileID: 0}
+  deathScore: {fileID: 0}

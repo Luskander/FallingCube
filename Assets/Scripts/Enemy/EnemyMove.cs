@@ -56,11 +56,25 @@ public class EnemyMove : MonoBehaviour
 		{
             if (!BuffInfluence.isImmune)
 			{
-                target.transform.position = new Vector2(1000f, 1000f);
+                PlayerScript.CurrentHealth--;
                 SoundManager.instance.DeathSound();
-                GameManager.instance.RestartGame();
+                StartCoroutine(DisableTriggerAfterTime());
+
+                if (PlayerScript.CurrentHealth == 0)
+				{
+                    target.transform.position = new Vector2(1000f, 1000f);
+                    SoundManager.instance.DeathSound();
+                    PlayerScript.isDead = true;
+                    //GameManager.instance.RestartGame();
+                }
             }
-           
         }
 	}
+
+    IEnumerator DisableTriggerAfterTime()
+	{
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +12,7 @@ public class MainMenu : MonoBehaviour
 	[SerializeField] private float smoothSpeed = 0.1f;
 	[SerializeField] private Vector3 desiredPosition;
 
-
+	[SerializeField] private TextMeshProUGUI currentLVL;
 	private Vector3[] menuPositions;
 	private void Awake()
 	{
@@ -20,6 +21,7 @@ public class MainMenu : MonoBehaviour
 
 	private void Start()
 	{
+		currentLVL.text = "Level: " + PlayerPrefs.GetInt("PlayerLVL");
 		menuPositions = new Vector3[menuContainer.childCount];
 		Vector3 halfScreen = new Vector3(Screen.width / 2, Screen.height / 2, 0);
 		for(int i = 0; i < menuPositions.Length; i++)
